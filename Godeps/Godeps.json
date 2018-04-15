@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/rogpeppe/godef",
+	"ImportPath": "github.com/mmaxim/godef",
 	"GoVersion": "devel-ea15f23",
 	"GodepVersion": "v71",
 	"Deps": [

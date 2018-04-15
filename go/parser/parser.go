@@ -15,9 +15,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/rogpeppe/godef/go/ast"
-	"github.com/rogpeppe/godef/go/scanner"
-	"github.com/rogpeppe/godef/go/token"
+	"github.com/mmaxim/godef/go/ast"
+	"github.com/mmaxim/godef/go/scanner"
+	"github.com/mmaxim/godef/go/token"
 )
 
 // The mode parameter to the Parse* functions is a set of flags (or 0).
@@ -535,6 +535,9 @@ func (p *parser) parseType() ast.Expr {
 		defer un(trace(p, "Type"))
 	}
 
+	if p.tok == token.ASSIGN {
+		p.next()
+	}
 	typ := p.tryType()
 
 	if typ == nil {
